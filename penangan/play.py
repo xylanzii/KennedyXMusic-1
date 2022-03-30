@@ -328,7 +328,7 @@ async def m_cb(b, cb):
         if (chet_id not in callsmusic.active_chats) or (
             callsmusic.active_chats[chet_id] == "paused"
         ):
-            await cb.answer("**Sedang Tidak Terhubung dengan VCG**", show_alert=True)
+              cb menunggu _ answer ( "**Ga terhubung sama vcg tod**" , show_alert  True )
         else:
             callsmusic.pause(chet_id)
               cb menunggu _ penjelasan ( "Kok dipause anak kontol!" )
