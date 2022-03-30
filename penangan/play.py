@@ -215,7 +215,7 @@ async def ee(client, message):
 @authorized_users_only
 async def settings(client, message):
     if message.chat.id in DISABLED_GROUPS:
-        menunggu  pesan . balasan ( "Pemmutar musik lu matiin" )
+        menunggu  pesan . balasan ( "Pemutar musik lu matiin" )
         kembali    
     playing = None
     chat_id = get_chat_id(message.chat)
@@ -371,12 +371,12 @@ async def m_cb(b, cb):
 
     elif type_ == "resume":
         if (chet_id not in callsmusic.active_chats) or (
-            callsmusic.active_chats[chet_id] == "playing"
+            callsmusic.active_chats[chet_id] == "Oke lanjut nyanyi tod"
         ):
             await cb.answer("**Obrolan tidak terhubung atau sudah diputar**", show_alert=True)
         else:
             callsmusic.resume(chet_id)
-            await cb.answer("Music Resumed!")
+            await cb.answer("Oke Lanjut nyanyi tod!")
     elif type_ == "puse":
         if (chet_id not in callsmusic.active_chats) or (
             callsmusic.active_chats[chet_id] == "paused"
