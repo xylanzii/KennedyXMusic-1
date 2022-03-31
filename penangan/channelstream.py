@@ -226,7 +226,7 @@ async def m_cb(b, cb):
         else:
             callsmusic.pytgcalls.pause_stream(chet_id)
 
-            await cb.answer("music paused!")
+            await cb.answer("Kok di pause anak kontol!")
             await cb.message.edit(
                 updated_stats(conv, qeue), reply_markup=r_ply("play")
             )
@@ -238,7 +238,7 @@ async def m_cb(b, cb):
             await cb.answer("chat is not connected!", show_alert=True)
         else:
             callsmusic.pytgcalls.resume_stream(chet_id)
-            await cb.answer("music resumed!")
+            await cb.answer("Y oke lanjut nyanyi tod!")
             await cb.message.edit(
                 updated_stats(conv, qeue), reply_markup=r_ply("pause")
             )
@@ -273,7 +273,7 @@ async def m_cb(b, cb):
             await cb.answer("chat is not connected or already playing", show_alert=True)
         else:
             callsmusic.pytgcalls.resume_stream(chet_id)
-            await cb.answer("music resumed!")
+            await cb.answer("Y oke lanjut nyanyi tof!")
     elif type_ == "cpuse":
         if (chet_id not in callsmusic.pytgcalls.active_calls) or (
             callsmusic.pytgcalls.active_calls[chet_id] == "paused"
@@ -282,7 +282,7 @@ async def m_cb(b, cb):
         else:
             callsmusic.pytgcalls.pause_stream(chet_id)
 
-            await cb.answer("music paused!")
+            await cb.answer("Kontol kok dipause anak anjg!")
     elif type_ == "ccls":
         await cb.answer("closed menu")
         await cb.message.delete()
@@ -344,7 +344,7 @@ async def m_cb(b, cb):
 @authorized_users_only
 async def play(_, message: Message):
     global que
-    lel = await message.reply("🔁 **processing...**")
+    lel = await message.reply("🔁 **Lagi nyari tod...**")
 
     try:
       conchat = await _.get_chat(message.chat.id)
@@ -445,6 +445,7 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton("⏺ Menu", callback_data="cmenu"),
                     InlineKeyboardButton("🗑 Close", callback_data="ccls"),
+                    InlineKeyboardButton("📬 Channel", url=f"https://t.me/Vylanesu
                 ],
                 [InlineKeyboardButton(text="🎧 CHANNEL", url=f"https://t.me/{UPDATES_CHANNEL}")],
             ]
@@ -464,7 +465,7 @@ async def play(_, message: Message):
         )
     elif urls:
         query = toxt
-        await lel.edit("🔁 **processing...**")
+        await lel.edit("🔁 **Lagi nyari tod...**")
         ydl_opts = {"format": "bestaudio/best"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -481,7 +482,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "❌ song not found, please give a valid song name."
+                "❌ nyari lagu apa si anjg,pusing."
             )
             print(str(e))
             return
@@ -492,6 +493,7 @@ async def play(_, message: Message):
               [
                   InlineKeyboardButton("⏺ Menu", callback_data="cmenu"),
                   InlineKeyboardButton("🗑 Close", callback_data="ccls")
+                  InlineKeyblardButton("📬 Channel", url=f"https://t.me/Vylanesu
               ],[
                   InlineKeyboardButton("🎧 CHANNEL", url=f"https://t.me/{UPDATES_CHANNEL}")
               ]
@@ -505,7 +507,7 @@ async def play(_, message: Message):
         for i in message.command[1:]:
             query += " " + str(i)
         print(query)
-        await lel.edit("🔁 **processing...**")
+        await lel.edit("🔁 **Lagi nyari tod...**")
         ydl_opts = {"format": "bestaudio/best"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -534,6 +536,7 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton("⏺ Menu", callback_data="cmenu"),
                     InlineKeyboardButton("🗑 Close", callback_data="ccls")
+                    InlinekeyboardButton("📬 Channel", url=f"https://t.me/Vylanesu
                 ],[
                     InlineKeyboardButton("🎧 CHANNEL", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ]
